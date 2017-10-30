@@ -34,9 +34,9 @@
     public Object[] toArray()
     {
         //Thaer Mohomad's code
-          Object[] arr = new Object[ length + 1 ];
+          Object[] arr = new Object[arr.length + 1 ];
         //Created an object that will be ascending
-          while (indexOf(heads) <= length)
+          while (indexOf(heads) <= arr.length)
           {
             //loop created that iterates through the values of the list
             arr[ heads.hashCode()] = heads;
