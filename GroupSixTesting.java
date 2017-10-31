@@ -50,42 +50,43 @@
     public <T> T[] toArray(T[] a)
     {
     // written by Collin Yan and Nguyen Do
-      Node <E> pointer = heads.get(0); // start at the head
-      int index = 0; // the current index of the array is 0
-      if (this.size() > a.length) // makes a new ArrayList if the one passed is too big
-      {
-    	    T[] arr =  (T[]) new Object[this.size()]
-    	
-    	    for (int i = 0; i < index; i++) // iterates through the SkipList and stores the nodes into the array
-   		    {
-   			      arr[i] = (T)pointer.value(); // stores the value of the pointer into the ArrayList
-			        pointer = pointer.next(); // moves pointer to the next node
-			        // after storing the value it moves the pointer to the node after it and then it would store that value and continue iterating through the loop
-		       }
-	    }
-      else
-      {
-    	  arr[i] = (T)pointer.value();
-    	  pointer = pointer.next;
-	    }
-      return arr;
-      }
-    
-public static boolean testToArrayT()
-{
-// I tried to make a SkipList here to test the toArray part, whatever the outcome is is what affects the ArrayList ***
-	SkipList<T> testList = new SkipList<T>(); // new SkipList to test out the toArray
-	Node<E> pointer = heads.get(0); // Start SkipList at head
-	int arr[] = new int[30]; // makes a new arr with size 30
-	for (int i = 0; i <= arr.length; i++) // iterates testList.add to add to the SkipList for the length of the array
-	{	
-		testList.add(i, Math.random(5000)); // add random value to the index
-		System.out.println(testList(i, testList.get(i));
-	}
-	//testList.toArray(arr); // passes testList through the Array arr
-	//for (int i = 0; i <= arr.length; i++)
-	//{
-		//System.out.println(arr[i]);
-	//}
-	return testList; 
-}
+        Node <E> pointer = heads.get(0); // start at the head
+        int index = 0; // the current index of the array is 0
+        if (this.size() > a.length) // makes a new ArrayList if the one passed is too big
+       	{
+        	T[] arr =  (T[]) new Object[this.size()];
+        	
+        	for (int i = 0; i < index; i++) // iterates through the SkipList and stores the nodes into the array
+        	{
+        		arr[i] = (T)pointer.value(); // stores the value of the pointer into the ArrayList
+       			pointer = pointer.next(i); // moves pointer to the next node
+    			// after storing the value it moves the pointer to the node after it and then it would store that value and continue iterating through the loop
+       		}
+        }
+        else if (this.size() <= a.length)
+       	{
+        	T[] arr = (T[]) a[this.size()];
+        	return arr;
+       	}
+        return a;
+    }
+        
+    public boolean testToArrayT()
+    {
+        SkipList testList = new SkipList();
+        Node<E> pointer = null;
+        int arr[] = new int[30];
+        for (int i = 0; i <= arr.length; i++) // iterates testList.add to add to the SkipList for the length of the array
+    	{	
+    		testList.add(i, Math.random()); // add random value to the index
+    		System.out.println(testList/*(i, testList.get(i))*/);
+    	}
+        
+    	testList.toArray(); // passes testList through the Array arr
+    	for (int i = 0; i <= arr.length; i++)
+    	{
+    		System.out.println(arr[i]);
+    	}
+    	return true; 
+    } 
+    }
