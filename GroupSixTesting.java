@@ -71,22 +71,22 @@
         return a;
     }
         
-    public static <T> boolean testToArrayT() 
+    public boolean testToArrayT()
     {
-    // I tried to make a SkipList here to test the toArray part, whatever the outcome is is what affects the ArrayList ***
-    	SkipList placeholder = new SkipList(); 
-    	SkipList<T> testList = new SkipList<T>(); // new SkipList to test out the toArray
-    	Node<E> pointer = placeholder.heads.get(0); // Start SkipList at head
-    	int arr[] = new int[30]; // makes a new arr with size 30
-    	for (int i = 0; i <= arr.length; i++) // iterates testList.add to add to the SkipList for the length of the array
+        SkipList testList = new SkipList();
+        Node<E> pointer = null;
+        int arr[] = new int[30];
+        for (int i = 0; i <= arr.length; i++) // iterates testList.add to add to the SkipList for the length of the array
     	{	
     		testList.add(i, Math.random()); // add random value to the index
-    		System.out.println(testList(i, testList.get(i)));
+    		System.out.println(testList/*(i, testList.get(i))*/);
     	}
-    	//testList.toArray(arr); // passes testList through the Array arr
-    	//for (int i = 0; i <= arr.length; i++)
-    	//{
-    		//System.out.println(arr[i]);
-    	//}
+        
+    	testList.toArray(); // passes testList through the Array arr
+    	for (int i = 0; i <= arr.length; i++)
+    	{
+    		System.out.println(arr[i]);
+    	}
     	return true; 
+    } 
     }
