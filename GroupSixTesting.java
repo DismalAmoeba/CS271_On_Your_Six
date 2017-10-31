@@ -31,7 +31,7 @@
 		return testList1.hashCode() == testList2.hashCode();
 	}
 
-	        public Object[] toArray()
+	public Object[] toArray()
         {
           //Thaer Mohomad and Hans Johnson's code
           Object[] arr = new Object[size()];
