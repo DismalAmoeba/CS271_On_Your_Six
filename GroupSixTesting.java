@@ -31,21 +31,24 @@
 		return testList1.hashCode() == testList2.hashCode();
 	}
 
+	//Written by Thaer Mohamad & Group 6
 	public Object[] toArray()
-        {
-          //Thaer Mohomad and Hans Johnson's code
-          Object[] arr = new Object[size()];
-          //Starting position is set equal to the head (null)
-          Node<E> current = null;
-          //loop created that iterates through the values of the list
-          for (int i = 0; i < size(); i++)
-          {
-	    //current set to position of head at index, which changes after for loop completes
-            current = heads.get(i);
-            arr[i] = current;
-          }
-          return arr;
-        }
+	{
+	//Created an object, the size of the list, that will be returns
+	Object[] arr = new Object[count];
+	  // indexOf: searches the array for the specific item and returns its position.
+	  //returns -1 if item is not found
+	  //loop that iterates through the values of the list
+	  while (indexOf(heads) <= arr.length)
+	  {
+	    //hashCode called & value added to array
+	    arr[ heads.hashCode()] = heads;
+	    // Iterate to next value
+	    heads = heads.next();
+	  }
+	//returns the array
+	return arr;
+	}
 
         public static boolean testToArrayObj() {
         //Hans Johnson & Thaer Mohomad
